@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Sampler</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="main.js"></script>
+    <script>
+        
+        // // Record Functionality
+
+        // // Logic to play the song based on the key press (not shown here)
+        // const audioContext = new AudioContext();
+        // // ... connect audio source to MediaRecorder (implementation details omitted)
+        // const mediaRecorder = new MediaRecorder(audioContext);
+
+        // mediaRecorder.ondataavailable = (event) => {
+        //     const audioBlob = event.data;
+        //     const downloadableUrl = URL.createObjectURL(audioBlob);
+        //     const downloadLink = document.createElement('a');
+        //     downloadLink.href = downloadableUrl;
+        //     downloadLink.download = "recorded_song.mp3"; // Adjust filename extension
+        //     downloadLink.click();
+        //     URL.revokeObjectURL(downloadableUrl); // Cleanup temporary URL
+        // };
+
+        // function recordNoise() {
+        //         mediaRecorder.start();
+        // };
+
+        // function stopRecording() {
+        //     // Stop recording when song finishes (key released or another key pressed)
+        //     mediaRecorder.stop();
+        // };
+
+    </script>
+    <!-- <script type="module">
+        import WaveSurfer from 'https://unpkg.com/wavesurfer.js@7/dist/wavesurfer.esm.js'
+
+        const wavesurfer = WaveSurfer.create({
+            container: '#waveform',
+            waveColor: '#4F4A85',
+            progressColor: '#383351',
+            url: '/audio.mp3',
+        })
+
+        wavesurfer.on('interaction', () => {
+            wavesurfer.play()
+        })
+    </script> -->
+    
+</head>
+<body>
+    <!-- <div style="margin: 1em 0 2em;">
+        <button id="play">Play/Pause</button>
+        <button id="backward">Backward 5s</button>
+        <button id="forward">Forward 5s</button>
+    </div> -->
+
+    <h1>Beat Splicer</h1>
+
+    <div class="master_controls">
+    <input type="file" id="fileInput">
+
+    <button id="record" ></button>  <!-- onclick="recordNoise()" -->
+    <button id="stop_record" onclick="stopRecording()"></button> <!-- onclick="stopRecording()" -->
+    </div>
+    <!-- <p>
+        <label>
+            <input type="checkbox" checked="${loop}" />
+            Loop regions
+        </label>
+    
+        <label style="margin-left: 2em">
+            Zoom: <input type="range" min="10" max="1000" value="10" />
+        </label>
+    </p> -->
+
+    <div id="tracks"></div>
+    
+    <!-- <p>
+        📖 <a href="https://wavesurfer.xyz/docs/classes/plugins_regions.RegionsPlugin">Regions plugin docs</a>
+    </p> -->
+</body>
+</html>
